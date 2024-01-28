@@ -31,9 +31,11 @@
     "debug-serve": "VITE_DEBUG_SERVE=1 vitest run -c vitest.config.e2e.ts",
     "debug-build": "VITE_TEST_BUILD=1 VITE_PRESERVE_BUILD_ARTIFACTS=1 vitest run -c vitest.config.e2e.ts",
     "build": "pnpm -r --filter='./packages/*' run build",
-    "dev": "pnpm -r --parallel --filter='./packages/*' run dev",
+    "origin-dev": "pnpm -r --parallel --filter='./packages/*' run dev",
     "release": "tsx scripts/release.ts",
-    "ci-publish": "tsx scripts/publishCI.ts"
+    "ci-publish": "tsx scripts/publishCI.ts",
+    "demo": "vite",
+    "dev": "pnpm run build && pnpm run demo"
   },
   "devDependencies": {
     "@babel/types": "^7.23.6",
